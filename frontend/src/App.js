@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import './App.css';
+import Header from './Header.js';
+import Content from './Content.js';
+
+import './style.css';
+
 
 const App = () => {
+
+    const [admin, setAdmin] = useState(false);
+
     return (
-        <h1>HI</h1>
+        <div>
+            <Header setAdmin={setAdmin} />
+            <Content admin={admin} />
+        </div>
     )
 }
 
