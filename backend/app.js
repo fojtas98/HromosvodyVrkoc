@@ -25,8 +25,10 @@ app.use(
     resave: false,
     secret: "This is a secret",
     saveUninitialized: false,
+
     cookie: {
       maxAge: 60 * 1000 * 60 * 2,
+      sameSite: false,
     },
   })
 );
