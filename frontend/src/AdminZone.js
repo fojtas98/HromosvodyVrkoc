@@ -25,7 +25,7 @@ const AdminZone = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    postLogin({ variables: input });
+    postLogin({ variables: { adminInput: { ...input } } });
   };
 
   return (
