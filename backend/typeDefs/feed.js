@@ -5,18 +5,18 @@ export default gql`
     getAllFeed: [feed]
   }
   extend type Mutation {
-    addNewItemToFeed(file: Upload!): feed
+    addNewItemToFeed(feedInput: feedInputData): feed
   }
 
   type feed {
     title: String
-    descriptions: String
-    pic: String
+    description: String
+    url: String
   }
 
   input feedInputData {
     title: String
-    descriptions: String
-    pic: String
+    description: String
+    file: Upload
   }
 `;

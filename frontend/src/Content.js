@@ -1,5 +1,5 @@
 import React from "react";
-import AdminZone from "./AdminZone";
+import AdminZone from "./AdminZone/AdminZone";
 
 const Content = (props) => {
   return (
