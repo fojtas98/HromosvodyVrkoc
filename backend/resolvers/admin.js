@@ -4,7 +4,7 @@ import { hash, compare } from "bcryptjs";
 export default {
   Query: {
     login: async (root, { adminInput }, { req }) => {
-      //   console.log(adminInput);
+      console.log(adminInput);
 
       const user = await Admin.findOne({ email: adminInput.email });
       if (!user) {
@@ -17,10 +17,23 @@ export default {
         return { email: adminInput.email };
       }
     },
+
+    logout: async (root, { adminInput }, { req, res }) => {
+      return new Promise((resolve, reject) => {
+        req.session.destroy((err) => {
+          if (err) reject(err);
+          res.clearCookie("sessionId");
+          resolve(true);
+        });
+      });
+    },
   },
 
   Mutation: {
     newAdmin: async (root, { adminInput }) => {
+      if (!req.session.sessionId) {
+        throw new Error("musis byt prihlasen");
+      }
       const existingAdmin = await Admin.findOne({ email: adminInput.email });
       console.log(existingAdmin);
       if (existingAdmin) {

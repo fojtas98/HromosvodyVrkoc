@@ -1,56 +1,40 @@
 import React, { useState, useEffect } from "react";
-import gql from "graphql-tag";
-import { useLazyQuery } from "@apollo/react-hooks";
 
 import LoginInput from "./LoginInput";
 import PostInput from "./PostInput";
+import LogOut from "./LogOut";
+import Portfolio from "../Portfolio/Portfolio";
 
-const login = gql`
-  query login($adminInput: adminInputData) {
-    login(adminInput: $adminInput) {
-      email
-    }
-  }
-`;
 const AdminZone = () => {
-  const [input, setInput] = useState({ email: "", password: "" });
-  const [postLogin, { data, loading, error }] = useLazyQuery(login);
-  const [logedInEmail, setLogedInEamil] = useState("");
+  const [login, setLogin] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInput(() => {
-      return {
-        ...input,
-        [name]: value,
-      };
-    });
+  const checkCookie = () => {
+    if (document.cookie.includes("sessionId")) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
   };
 
-  const submit = (e) => {
-    e.preventDefault();
-    postLogin({ variables: { adminInput: { ...input } } }, data);
-  };
   useEffect(() => {
-    if (!loading && !error && data) {
-      setLogedInEamil(data.login.email);
+    console.log(login);
+    if (document.cookie.includes("sessionId")) {
+      setLogin(true);
+    } else {
+      setLogin(false);
     }
-    if (error) {
-    }
-  }, [loading, data, logedInEmail]);
-
-  const cookie = document.cookie.split("=");
+  }, [login]);
 
   return (
     <div>
-      {cookie[0] === "sessionId" ? (
-        <PostInput />
+      {login ? (
+        <div>
+          <PostInput />
+          <LogOut cookieTest={checkCookie} />
+          <Portfolio admin={true} />
+        </div>
       ) : (
-        <LoginInput
-          submit={submit}
-          handleInputChange={handleInputChange}
-          input={input}
-        />
+        <LoginInput cookieTest={checkCookie} />
       )}
     </div>
   );

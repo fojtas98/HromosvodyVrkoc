@@ -6,6 +6,8 @@ export default gql`
   }
   extend type Mutation {
     addNewItemToFeed(feedInput: feedInputData): feed
+
+    removeFeedItem(title: String!): Boolean
   }
 
   type feed {

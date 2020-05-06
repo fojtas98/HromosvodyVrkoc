@@ -4,6 +4,7 @@ export default gql`
   extend type Query {
     me: admin
     login(adminInput: adminInputData): admin
+    logout: Boolean
   }
   extend type Mutation {
     newAdmin(adminInput: adminInputData): admin

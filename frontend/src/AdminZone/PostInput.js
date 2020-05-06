@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 
@@ -34,12 +34,7 @@ const PostInput = () => {
     }
   };
 
-  const submit = (e) => {
-    e.preventDefault();
-    // const fd = new FormData();
-    // fd.append("img", file, file.name);
-    // console.log(fd);
-    console.log(input);
+  const submit = () => {
     addNewItemToFeed({
       variables: {
         feedInput: {
