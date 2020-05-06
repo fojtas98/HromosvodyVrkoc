@@ -1,0 +1,30 @@
+.header {
+    width: 100%;
+    padding: 0px;
+    margin: 0;
+    text-align: center;
+}
+
+.navlinks {
+    margin-bottom: 10px;
+    padding: 0.5rem 0rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(41, 41, 41);
+}
+
+.navlinks a {
+    padding: 0 16px;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+}
+
+.navlinks a:hover {
+    background-color: rgb(255, 200, 21);
+    color: black;
+}

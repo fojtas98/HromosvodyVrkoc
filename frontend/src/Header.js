@@ -34,7 +34,7 @@ const Header = props => {
                         onClick={changeAdmin}
                     >Ceník</a>
                     <a 
-                        href="#orders"
+                        href="#order"
                         id="1"
                         onClick={changeAdmin}
                     >Poptávka</a>

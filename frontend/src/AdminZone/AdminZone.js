@@ -7,7 +7,6 @@ import Portfolio from "../Portfolio/Portfolio";
 
 const AdminZone = () => {
   const [login, setLogin] = useState(false);
-
   const checkCookie = () => {
     if (document.cookie.includes("sessionId")) {
       setLogin(true);

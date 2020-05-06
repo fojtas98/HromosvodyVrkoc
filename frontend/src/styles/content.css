@@ -1,0 +1,36 @@
+.content {
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    background-color: rgb(41, 41, 41);
+    margin: 0 auto;
+
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chapter {
+    padding-bottom: 2rem;
+    border-bottom: 3px solid blanchedalmond;
+}
+
+.chapterHeader {
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: rgb(255, 200, 21);
+    background-color: rgb(34, 34, 34);
+    border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+.PortfolioItem {
+    width: 80%;
+    margin: auto;
+}
+img {
+    max-width: 25rem;
+    margin-top: 1rem;
+}
