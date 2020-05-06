@@ -1,0 +1,35 @@
+.adminZone input,
+textarea {
+  margin: 0.5rem;
+}
+.adminZone {
+  width: 100%;
+  text-align: center;
+  padding: 0rem 0.5rem 1rem 1rem;
+  color: #ffc815;
+}
+button {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 2px;
+  background-color: white;
+}
+button:hover {
+  background-color: #ffc815;
+  cursor: pointer;
+}
+
+.logOut {
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: -2rem;
+}
+.logOut button {
+  padding: 0.5;
+  font-size: 1rem;
+  background-color: #ff2c2c;
+  color: white;
+  text-transform: uppercase;
+}

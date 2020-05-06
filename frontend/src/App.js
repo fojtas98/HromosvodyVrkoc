@@ -7,10 +7,11 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import Header from "./Header.js";
 import Content from "./Content.js";
 
-import './styles/index.css';
-import './styles/header.css';
-import './styles/content.css';
-import './styles/footer.css';
+import "./styles/index.css";
+import "./styles/header.css";
+import "./styles/content.css";
+import "./styles/footer.css";
+import "./styles/adminZone.css";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),

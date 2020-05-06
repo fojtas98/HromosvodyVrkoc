@@ -7,7 +7,7 @@ const PortfolioItem = (props) => {
       <h2>{props.title}</h2>
       <p>{props.description}</p>
       <img src={props.url} alt="img" />
-      <DeleteButton title={props.title} />
+      {props.admin ? <DeleteButton title={props.title} /> : null}
     </div>
   );
 };

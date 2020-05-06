@@ -21,25 +21,15 @@ const Portfolio = (props) => {
     if (!loading && data) {
       setArr(
         data.getAllFeed.map((item, index) => {
-          if (props.admin) {
-            return (
-              <PortfolioItem
-                key={index}
-                description={item.description}
-                title={item.title}
-                url={item.url}
-              />
-            );
-          } else {
-            return (
-              <PortfolioItem
-                key={index}
-                title={item.title}
-                url={item.url}
-                description={item.description}
-              />
-            );
-          }
+          return (
+            <PortfolioItem
+              key={index}
+              title={item.title}
+              url={item.url}
+              description={item.description}
+              admin={props.admin}
+            />
+          );
         })
       );
     }

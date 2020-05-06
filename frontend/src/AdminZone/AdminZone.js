@@ -25,12 +25,12 @@ const AdminZone = () => {
   }, [login]);
 
   return (
-    <div>
+    <div className="adminZone">
       {login ? (
-        <div>
-          <PostInput />
+        <div className="post">
           <LogOut cookieTest={checkCookie} />
-          <Portfolio admin={true} />
+          <PostInput />
+          <Portfolio admin={login} />
         </div>
       ) : (
         <LoginInput cookieTest={checkCookie} />

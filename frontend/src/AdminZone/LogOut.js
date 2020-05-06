@@ -18,7 +18,7 @@ const LogOut = (props) => {
     props.cookieTest();
   }, [data, loading, error]);
   return (
-    <div>
+    <div className="logOut">
       <button onClick={logOut}>logOut</button>
     </div>
   );

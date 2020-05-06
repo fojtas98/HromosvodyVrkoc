@@ -38,19 +38,23 @@ const LoginInput = (props) => {
     }
   }, [data, loading, error]);
   return (
-    <div>
+    <div className="login">
+      <h2>Login</h2>
       <form onSubmit={submit}>
         <input
           type="text"
           name="email"
           onChange={handleInputChange}
           value={input.email}
+          placeholder="email"
         />
+        <br />
         <input
           type="password"
           name="password"
           onChange={handleInputChange}
           value={input.password}
+          placeholder="heslo"
         />
         <br />
         <button>Login</button>

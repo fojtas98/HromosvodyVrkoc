@@ -47,28 +47,31 @@ const PostInput = () => {
   };
 
   return (
-    <form onSubmit={submit}>
-      <input
-        type="text"
-        name="title"
-        placeholder="nadpis"
-        onChange={handleInputChange}
-        value={input.title}
-      />
-      <br />
-      <textarea
-        name="description"
-        cols="30"
-        rows="10"
-        placeholder="popis"
-        onChange={handleInputChange}
-        value={input.description}
-      ></textarea>
-      <br />
-      <input type="file" name="file" onChange={handleInputChange} />
-      <br />
-      <button>poslat</button>
-    </form>
+    <div>
+      <h2>Post Input</h2>
+      <form onSubmit={submit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="nadpis"
+          onChange={handleInputChange}
+          value={input.title}
+        />
+        <br />
+        <textarea
+          name="description"
+          cols="30"
+          rows="10"
+          placeholder="popis"
+          onChange={handleInputChange}
+          value={input.description}
+        ></textarea>
+        <br />
+        <input type="file" name="file" onChange={handleInputChange} />
+        <br />
+        <button>poslat</button>
+      </form>
+    </div>
   );
 };
 
