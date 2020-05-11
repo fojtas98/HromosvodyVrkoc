@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, f } from "react";
 
 import LoginInput from "./LoginInput";
 import PostInput from "./PostInput";
@@ -7,6 +7,7 @@ import Portfolio from "../Portfolio/Portfolio";
 
 const AdminZone = () => {
   const [login, setLogin] = useState(false);
+  const [status, setStatus] = useState({ post: false, delete: false });
   const checkCookie = () => {
     if (document.cookie.includes("sessionId")) {
       setLogin(true);
@@ -15,13 +16,15 @@ const AdminZone = () => {
     }
   };
 
+  const checkStatus = (where) => {
+    console.log(where);
+    if (where === "deleteBtn") {
+      setStatus({ delete: true });
+    } else setStatus({ post: true });
+  };
+
   useEffect(() => {
-    console.log(login);
-    if (document.cookie.includes("sessionId")) {
-      setLogin(true);
-    } else {
-      setLogin(false);
-    }
+    checkCookie();
   }, [login]);
 
   return (
@@ -29,8 +32,8 @@ const AdminZone = () => {
       {login ? (
         <div className="post">
           <LogOut cookieTest={checkCookie} />
-          <PostInput />
-          <Portfolio admin={login} />
+          <PostInput admin={login} checkStatus={checkStatus} />
+          <Portfolio admin={login} status={status} checkStatus={checkStatus} />
         </div>
       ) : (
         <LoginInput cookieTest={checkCookie} />

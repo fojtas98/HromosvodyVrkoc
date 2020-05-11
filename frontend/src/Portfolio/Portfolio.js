@@ -14,26 +14,42 @@ const callQuery = gql`
 `;
 
 const Portfolio = (props) => {
-  const { loading, error, data } = useQuery(callQuery);
+  const { loading, error, data, refetch } = useQuery(callQuery);
   const [arr, setArr] = useState([]);
 
+  const getArr = (itemData) => {
+    setArr(() => {
+      const newArr = itemData.getAllFeed.map((item, index) => {
+        return (
+          <PortfolioItem
+            key={index}
+            index={index}
+            title={item.title}
+            url={item.url}
+            description={item.description}
+            admin={props.admin}
+            checkStatus={props.checkStatus}
+          />
+        );
+      });
+      return newArr.reverse();
+    });
+  };
+
+  const afterRefetch = () => {
+    refetch().then(({ data }) => {
+      getArr(data);
+    });
+  };
   useEffect(() => {
-    if (!loading && data) {
-      setArr(
-        data.getAllFeed.map((item, index) => {
-          return (
-            <PortfolioItem
-              key={index}
-              title={item.title}
-              url={item.url}
-              description={item.description}
-              admin={props.admin}
-            />
-          );
-        })
-      );
+    console.log(props.status);
+    if (props.status.post === true || props.status.delete === true) {
+      return afterRefetch();
     }
-  }, [loading]);
+    if (!loading && data) {
+      return getArr(data);
+    }
+  }, [loading, props.status]);
 
   return <div>{arr}</div>;
 };

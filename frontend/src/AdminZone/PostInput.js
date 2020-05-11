@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
+import Portfolio from "../Portfolio/Portfolio";
 
 const mutationCall = gql`
   mutation addNewItemToFeed($feedInput: feedInputData!) {
@@ -12,18 +13,19 @@ const mutationCall = gql`
   }
 `;
 
-const PostInput = () => {
+const PostInput = (props) => {
   const [addNewItemToFeed, { data, loading }] = useMutation(mutationCall);
+
   const [input, setInput] = useState({
     title: "",
     description: "",
+    file: [],
   });
-  const [file, setFile] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "file") {
-      setFile(e.target.files[0]);
+      setInput({ ...input, [name]: e.target.files[0] });
     } else if (name !== "file") {
       setInput(() => {
         return {
@@ -33,19 +35,20 @@ const PostInput = () => {
       });
     }
   };
-
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     addNewItemToFeed({
       variables: {
         feedInput: {
           title: input.title,
           description: input.description,
-          file: file,
+          file: input.file,
         },
       },
+    }).then(() => {
+      props.checkStatus("postBtn");
     });
   };
-
   return (
     <div>
       <h2>Post Input</h2>

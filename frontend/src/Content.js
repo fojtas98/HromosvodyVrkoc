@@ -14,7 +14,7 @@ const Content = (props) => {
               <h1 id="work">Ukázky realizací</h1>
             </div>
             <div>
-              <Portfolio />
+              <Portfolio status={false} />
             </div>
           </div>
 

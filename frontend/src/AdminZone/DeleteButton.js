@@ -16,6 +16,8 @@ const DeleteButton = (props) => {
     removeFeedItem({
       variables: { title: props.title },
       notifyOnNetworkStatusChange: true,
+    }).then(() => {
+      props.checkStatus("deleteBtn");
     });
   };
 

@@ -1,36 +1,84 @@
 .content {
-    color: rgb(255, 255, 255);
-    overflow: hidden;
-    background-color: rgb(41, 41, 41);
-    margin: 0 auto;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  background-color: rgb(41, 41, 41);
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.content h1 {
+  font-size: 2.3rem;
 }
 
 .chapter {
-    padding-bottom: 2rem;
-    border-bottom: 3px solid blanchedalmond;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid blanchedalmond;
 }
 
 .chapterHeader {
-    width: 100%;
-    padding: 0.5rem 0 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: rgb(255, 200, 21);
-    background-color: rgb(34, 34, 34);
-    border-bottom: 1px solid rgb(88, 88, 88);
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: rgb(255, 200, 21);
+  background-color: rgb(34, 34, 34);
+  border-bottom: 1px solid rgb(88, 88, 88);
 }
 
-.PortfolioItem {
-    width: 80%;
-    margin: auto;
+.portfolioItem {
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  max-height: fit-content;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "header header ";
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.452);
 }
-img {
-    max-width: 25rem;
-    margin-top: 1rem;
+.portfolioItem img {
+  max-height: 20rem;
+}
+
+.portfolioItem h2 {
+  padding: 1rem;
+  grid-area: header;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.452);
+}
+.portfolioItem p {
+  height: fit-content;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+#id1.portfolioItem img {
+  border-right: 0.5px solid rgba(255, 255, 255, 0.452);
+  margin-left: auto;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
+#id0.portfolioItem img {
+  border-left: 0.5px solid rgba(255, 255, 255, 0.452);
+  margin-right: auto;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+#id1.portfolioItem p {
+  text-align: start;
+  margin-top: 12%;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+#id0.portfolioItem p {
+  text-align: end;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  grid-column-start: 1;
+  grid-row-start: 2;
 }
