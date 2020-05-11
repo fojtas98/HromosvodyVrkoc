@@ -8,28 +8,30 @@
 
 .navlinks {
   margin-bottom: 0.5rem;
-  padding: 0.5rem 0rem;
+  padding: 0.8rem 0rem;
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
+.navlinks ul {
+  max-width: 100%;
+}
 
 .navlinks a {
   padding: 0 1.2rem;
-  color: #f2f2f2;
   text-align: center;
-  text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   border-left: 1px solid whitesmoke;
   border-right: 1px solid whitesmoke;
-}
-
-.navlinks a:hover {
-  background-color: rgb(255, 200, 21);
-  color: black;
 }
 
 .header-pic {
   width: 100%;
   max-height: 25rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .navlinks a {
+    font-size: 1rem;
+  }
 }

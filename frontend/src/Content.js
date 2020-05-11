@@ -4,14 +4,25 @@ import Portfolio from "./Portfolio/Portfolio";
 import Prices from "./Prices";
 import Order from "./Order";
 import Contacts from "./Contacts";
+import Home from "./Home";
 
 const Content = (props) => {
   return (
-    <div className="content">
+    <div>
       {props.admin ? (
-        <AdminZone />
+        <div className="content">
+          <AdminZone />
+        </div>
       ) : (
-        <div>
+        <div className="content">
+          <div className="chapter">
+            <div className="chapterHeader">
+              <h1 id="Home">Úvod</h1>
+            </div>
+            <div>
+              <Home />
+            </div>
+          </div>
           <div className="chapter">
             <div className="chapterHeader">
               <h1 id="work">Ukázky realizací</h1>
@@ -36,7 +47,7 @@ const Content = (props) => {
 
           <div className="chapter">
             <div className="chapterHeader">
-              <h1 id="contacts">Kontakty</h1>
+              <h1 id="contacts">Kontakt</h1>
             </div>
             <Contacts />
           </div>

@@ -4,13 +4,11 @@
   background-color: rgb(41, 41, 41);
   margin: 0 auto;
   width: 80%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .content h1 {
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 
 .chapter {
@@ -41,7 +39,7 @@
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.452);
 }
 .portfolioItem img {
-  max-height: 20rem;
+  max-width: 90%;
 }
 
 .portfolioItem h2 {
@@ -71,7 +69,7 @@
 }
 #id1.portfolioItem p {
   text-align: start;
-  margin-top: 12%;
+
   padding: 0.5rem 2rem 0.5rem 2rem;
   grid-column-start: 2;
   grid-row-start: 2;
@@ -81,4 +79,90 @@
   padding: 0.5rem 2rem 0.5rem 2rem;
   grid-column-start: 1;
   grid-row-start: 2;
+}
+
+/* home */
+.home {
+  padding: 0 1rem;
+}
+.home ol {
+  padding: 0rem 0rem 0rem 2.5rem;
+}
+.home p {
+  padding: 0.5rem;
+}
+.home h3 {
+  color: rgb(255, 200, 21);
+}
+.home li {
+  border-bottom: 0.5px solid white;
+  padding: 0.2rem;
+  margin: 0.5rem;
+}
+
+.home a {
+  color: rgb(255, 200, 21);
+  font-weight: bold;
+  float: right;
+}
+.home a:hover {
+  background-color: rgb(75, 75, 75);
+}
+/* contacts */
+
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.contacts h3 {
+  margin: 0.5rem 0rem;
+  font-size: 1.3rem;
+}
+
+/* For mobile phones: */
+
+@media only screen and (max-width: 767px) {
+  .content {
+    width: 90%;
+  }
+  .content h1 {
+    font-size: 1.7rem;
+  }
+  .chapterHeader {
+    margin: auto;
+  }
+
+  .portfolioItem h2 {
+    padding: 0.5rem;
+  }
+  .portfolioItem {
+    display: block;
+  }
+  #id0.portfolioItem img {
+    border: 0;
+  }
+  #id1.portfolioItem img {
+    border: 0;
+  }
+  #id0.portfolioItem p {
+    text-align: center;
+  }
+  #id1.portfolioItem p {
+    text-align: center;
+  }
+
+  /* contacts */
+
+  .contacts {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .contacts h3 {
+    margin: 0.5rem 0rem;
+    font-size: 1.3rem;
+  }
 }
