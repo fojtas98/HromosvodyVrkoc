@@ -2,19 +2,19 @@ import { gql } from "apollo-server-express";
 
 export default gql`
   extend type Query {
-    me: admin
-    login(adminInput: adminInputData): admin
+    me: Admin
+    login(adminInput: adminInputData): Admin
     logout: Boolean
   }
   extend type Mutation {
-    newAdmin(adminInput: adminInputData): admin
+    newAdmin(adminInput: adminInputData): Admin
   }
   input adminInputData {
     email: String!
     password: String!
   }
 
-  type admin {
+  type Admin {
     email: String!
   }
 `;

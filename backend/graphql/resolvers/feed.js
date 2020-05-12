@@ -1,5 +1,5 @@
 import { createWriteStream } from "fs";
-import FeedItem from "../models/feedItem";
+import FeedItem from "../../models/feedItem";
 export default {
   Query: {
     getAllFeed: async (parent, args, { req, res }) => {

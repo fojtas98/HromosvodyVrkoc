@@ -2,15 +2,15 @@ import { gql } from "apollo-server-express";
 
 export default gql`
   extend type Query {
-    getAllFeed: [feed]
+    getAllFeed: [Feed]
   }
   extend type Mutation {
-    addNewItemToFeed(feedInput: feedInputData): feed
+    addNewItemToFeed(feedInput: feedInputData): Feed
 
     removeFeedItem(title: String!): Boolean
   }
 
-  type feed {
+  type Feed {
     title: String
     description: String
     url: String

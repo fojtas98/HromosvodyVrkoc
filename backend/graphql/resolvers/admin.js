@@ -1,4 +1,4 @@
-import Admin from "../models/admin";
+import Admin from "../../models/admin";
 import { UserInputError } from "apollo-server-express";
 import { hash, compare } from "bcryptjs";
 export default {

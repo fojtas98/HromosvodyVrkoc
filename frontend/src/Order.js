@@ -7,6 +7,12 @@ const Order = () => {
         Jmeno
         <input type="text" />
       </label>
+      <select id="hromosvody" name="hromosvody">
+        <option value="none">Vyberte</option>
+        <option value="klasicky">Klasicky</option>
+        <option value="klasicky">Klasicky</option>
+        <option value="klasicky">Klasicky</option>
+      </select>
     </form>
   );
 };
