@@ -17,23 +17,20 @@ const Header = (props) => {
 
       <div className="navlinks">
         <ul>
-          <a href="#" id="1" onClick={changeAdmin}>
+          <a href="/" id="1">
             Domů
           </a>
-          <a href="#work" id="1" onClick={changeAdmin}>
+          <a href="/#work" id="1">
             Realizace
           </a>
-          <a href="#prices" id="1" onClick={changeAdmin}>
+          <a href="/#prices" id="1">
             Ceník
           </a>
-          <a href="#order" id="1" onClick={changeAdmin}>
+          <a href="/#order" id="1">
             Poptávka
           </a>
-          <a href="#contacts" id="1" onClick={changeAdmin}>
+          <a href="/#contacts" id="1">
             Kontakty
-          </a>
-          <a href="#" id="2" onClick={changeAdmin}>
-            Admin Zone
           </a>
         </ul>
       </div>

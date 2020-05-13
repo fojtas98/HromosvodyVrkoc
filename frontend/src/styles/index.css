@@ -6,7 +6,9 @@
 }
 
 body {
-  background-color: #acaeb9;
+  background-color: #acaeb98a;
+  max-width: 1700px;
+  margin: auto;
 }
 
 a {

@@ -18,7 +18,7 @@ const Home = () => {
 
       <ol>
         <li>
-          <h4>Klasický</h4> (Franklinův, resp. Divišův) „pasivní“ hromosvod,
+          <h4>Klasický hromosvod</h4> (Franklinův, resp. Divišův) „pasivní“,
           který spolehlivě svede přímý úder blesku do zemnící soustavy tak, aby
           nedošlo k nebezpečným přeskokům na vodivé části objektu.
           <br />

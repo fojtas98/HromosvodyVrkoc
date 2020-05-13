@@ -28,16 +28,22 @@ const AdminZone = () => {
   }, [login]);
 
   return (
-    <div className="adminZone">
-      {login ? (
-        <div className="post">
-          <LogOut cookieTest={checkCookie} />
-          <PostInput admin={login} checkStatus={checkStatus} />
-          <Portfolio admin={login} status={status} checkStatus={checkStatus} />
-        </div>
-      ) : (
-        <LoginInput cookieTest={checkCookie} />
-      )}
+    <div className="content">
+      <div className="adminZone">
+        {login ? (
+          <div className="post">
+            <LogOut cookieTest={checkCookie} />
+            <PostInput admin={login} checkStatus={checkStatus} />
+            <Portfolio
+              admin={login}
+              status={status}
+              checkStatus={checkStatus}
+            />
+          </div>
+        ) : (
+          <LoginInput cookieTest={checkCookie} />
+        )}
+      </div>
     </div>
   );
 };
