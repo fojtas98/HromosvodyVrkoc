@@ -11,7 +11,6 @@ import "./styles/index.css";
 import "./styles/header.css";
 import "./styles/content.css";
 import "./styles/footer.css";
-import "./styles/adminZone.css";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
