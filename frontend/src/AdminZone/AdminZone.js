@@ -1,9 +1,11 @@
-import React, { useState, useEffect, f } from "react";
+import React, { useState, useEffect } from "react";
 
 import LoginInput from "./LoginInput";
 import PostInput from "./PostInput";
 import LogOut from "./LogOut";
 import Portfolio from "../Portfolio/Portfolio";
+
+import "./adminZone.css";
 
 const AdminZone = () => {
   const [login, setLogin] = useState(false);
