@@ -44,7 +44,6 @@ const Portfolio = (props) => {
     });
   };
   useEffect(() => {
-    console.log(props.status);
     if (props.status.post === true || props.status.delete === true) {
       return afterRefetch();
     }

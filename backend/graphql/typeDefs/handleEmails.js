@@ -17,7 +17,8 @@ export default gql`
     antena: Boolean
     zemneni: Boolean
     jmeno: String
-    adresa: String
+    mesto: String
+    ulice: String
     tel: Int
     email: String
     poznamky: String

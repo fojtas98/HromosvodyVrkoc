@@ -1,47 +1,103 @@
 import React, { useState } from 'react';
+import gql from 'graphql-tag';
 
 import './Form.css';
 
 const Form = () => {
 
     const [ formData, setFormData ] = useState({
-        obvod: '',
-        vyska: '',
-        vyskaOkap: '',
-        delka: '',
-        typKrytiny: '',
+        obvodBudovy: '',
+        vyskaBudovy: '',
+        vyskaBudovyKOkapu: '',
+        delkaHrebenu: '',
+        typStresniKrytiny: '',
         antena: '',
         zemneni: '',
-        name: '',
-        city: '',
-        street: '',
-        telephone: '',
+        jmeno: '',
+        mesto: '',
+        ulice: '',
+        tel: '',
         email: '',
-        notes: ''
+        poznamky: ''
     });
 
+
     const handleFormData = event => {
-        console.log(formData)
-        const { name, value } = event.target;
-        setFormData(prevState => {
-            return {...prevState, [name]: value};
-        })
+        const { name, value, type } = event.target;
+        console.log(value);
+        console.log(formData);
+        if (type === "number") {
+            setFormData(prevState => {
+                return {...prevState, [name]: parseInt(value, 10)}
+            })
+        } else if (type === "radio") {
+            setFormData(prevState=> {
+                return {...prevState, [name]: value === "yes" }
+            })
+        } else {
+            setFormData(prevState => {
+                return {...prevState, [name]: value};
+            })
+        }
     }
 
     const handleSubmit = () => {
-        console.log(formData);
+        // nevim jak tohle udelat         
+        const schema = gql`
+        {
+                        handleEmails(EmailData: 
+                            obvodBudovy: ${formData.obvodBudovy}
+                            vyskaBudovy: ${formData.vyskaBudovy}
+                            vyskaBudovyKOkapu: ${formData.vyskaBudovyKOkapu}
+                            delkaHrebenu: ${formData.delkaHrebenu}
+                            typStresniKrytiny: "${formData.typStresniKrytiny}"
+                            antena: ${formData.antena}
+                            zemneni: ${formData.zemneni}
+                            jmeno: "${formData.jmeno}"
+                            mesto: "${formData.mesto}"
+                            ulice: "${formData.ulice}"
+                            tel: ${formData.tel}
+                            email: "${formData.email}"
+                            poznamky: "${formData.poznamky}"    
+                        ) {
+                            Boolean
+                        }
+                    } 
+            ` 
+        ;
+
+        fetch('http://localhost:5005/graphql', {
+            method: 'POST',
+            body: JSON.stringify(schema),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                if (res.status !== 200 & res.status !== 201) {
+                    throw new Error('Failed');
+                }
+                return res.json();
+            })
+            .then(resData => {
+                console.log(resData);
+            })
+            .catch(err => {
+                console.log(err);
+            })        
     }
 
     return (
-        <form className="orderForm" onSubmit={() => handleSubmit()}>
+    <div>
+        <form className="orderForm" >
             <div>
                 <label>
                     Obvod budovy:
                 </label>
                 <input 
-                    type="text"
-                    name="obvod"
-                    value={formData.obvod}
+                    type="number"
+                    name="obvodBudovy"
+                    value={formData.obvodBudovy}
                     onChange={e => handleFormData(e)}
                     placeholder="Uvádějte v metrech" 
                 />
@@ -51,8 +107,9 @@ const Form = () => {
                     Výška budovy:
                 </label>
                 <input 
-                    type="text"
-                    name="vyska"
+                    type="number"
+                    name="vyskaBudovy"
+                    value={formData.vyskaBudovy}
                     onChange={handleFormData}
                     placeholder="Uvádějte v metrech" 
                 />
@@ -62,8 +119,9 @@ const Form = () => {
                     Výška budovy k okapu:
                 </label>
                 <input 
-                    type="text"
-                    name="vyskaOkap"
+                    type="number"
+                    name="vyskaBudovyKOkapu"
+                    value={formData.vyskaBudovyKOkapu}
                     onChange={handleFormData}
                     placeholder="Uvádějte v metrech" 
                 />
@@ -73,8 +131,9 @@ const Form = () => {
                     Délka hřebenu:
                 </label>
                 <input 
-                    type="text"
-                    name="delka"
+                    type="number"
+                    name="delkaHrebenu"
+                    value={formData.delkaHrebenu}
                     onChange={handleFormData}
                     placeholder="Uvádějte v metrech"
                 />
@@ -85,7 +144,8 @@ const Form = () => {
                 </label>
                 <input 
                     type="text"
-                    name="typKrytiny"
+                    name="typStresniKrytiny"
+                    value={formData.typStresniKrytiny}
                     onChange={handleFormData}
                     placeholder="Tašky, plech,.." 
                 />
@@ -101,6 +161,7 @@ const Form = () => {
                             type="radio" 
                             name="antena"
                             value="yes"
+                            checked={formData.antena === true}
                             onChange={handleFormData}
                         />
                     </label>
@@ -110,6 +171,7 @@ const Form = () => {
                             type="radio"
                             name="antena"
                             value="no"
+                            checked={formData.antena === false}
                             onChange={handleFormData}
                         />
                     </label>
@@ -126,6 +188,7 @@ const Form = () => {
                             type="radio" 
                             name="zemneni"
                             value="yes"
+                            checked={formData.zemneni === true}
                             onChange={handleFormData}
                         />
                     </label>
@@ -135,6 +198,7 @@ const Form = () => {
                             type="radio"
                             name="zemneni"
                             value="no"
+                            checked={formData.zemneni === false}
                             onChange={handleFormData}
                         />
                     </label>
@@ -146,7 +210,8 @@ const Form = () => {
                 </label>
                 <input 
                     type="text"
-                    name="name"
+                    name="jmeno"
+                    value={formData.jmeno}
                     onChange={handleFormData}
                     placeholder="Josef Novák"
                 />
@@ -157,7 +222,8 @@ const Form = () => {
                 </label>
                 <input 
                     type="text"
-                    name="city"
+                    name="mesto"
+                    value={formData.mesto}
                     onChange={handleFormData}
                     placeholder="Praha, 100 01"
                 />
@@ -168,7 +234,8 @@ const Form = () => {
                 </label>
                 <input 
                     type="text"
-                    name="street"
+                    name="ulice"
+                    value={formData.ulice}
                     onChange={handleFormData}
                     placeholder="Květinová 53"
                 />
@@ -178,10 +245,11 @@ const Form = () => {
                     Tel.:
                 </label>
                 <input 
-                    type="tel"
-                    name="telephone"
+                    type="number"
+                    name="tel"
+                    value={formData.tel}
                     onChange={handleFormData}
-                    placeholder="123 456 789"
+                    placeholder="123456789"
                 />
             </div>
             <div>
@@ -189,8 +257,9 @@ const Form = () => {
                     Email:
                 </label>
                 <input 
-                    type="email"
+                    type="text"
                     name="email"
+                    value={formData.email}
                     onChange={handleFormData}
                     placeholder="vášEmail@email.cz"
                 />
@@ -201,16 +270,20 @@ const Form = () => {
                 </label>
                 <textarea 
                     rows="4"
-                    name="notes"
+                    name="poznamky"
+                    value={formData.poznamky}
                     onChange={handleFormData}
                     placeholder="Prostor pro poznámky"
                 />
             </div>
 
-            <button type="submit" value="Submit">
+        </form>
+
+            <button onClick={handleSubmit} value="Submit">
                 Submit
             </button>
-        </form>
+
+    </div>
     );
 };
 
