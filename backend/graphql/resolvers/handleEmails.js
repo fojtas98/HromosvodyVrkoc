@@ -54,8 +54,13 @@ export default {
             : `<span></span>`
         }
         ${
-          EmailData.adresa
-            ? `<u>Adresa:</u> ${EmailData.adresa}  <br />`
+          EmailData.mesto
+            ? `<u>Mesto:</u> ${EmailData.mesto}  <br />`
+            : `<span></span>`
+        }
+        ${
+          EmailData.ulice
+            ? `<u>Ulice:</u> ${EmailData.ulice}  <br />`
             : `<span></span>`
         }
         ${

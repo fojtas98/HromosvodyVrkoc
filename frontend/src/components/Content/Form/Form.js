@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import gql from 'graphql-tag';
 
 import './Form.css';
 
@@ -42,30 +41,15 @@ const Form = () => {
     }
 
     const handleSubmit = () => {
-        // nevim jak tohle udelat         
-        const schema = gql`
-        {
-                        handleEmails(EmailData: 
-                            obvodBudovy: ${formData.obvodBudovy}
-                            vyskaBudovy: ${formData.vyskaBudovy}
-                            vyskaBudovyKOkapu: ${formData.vyskaBudovyKOkapu}
-                            delkaHrebenu: ${formData.delkaHrebenu}
-                            typStresniKrytiny: "${formData.typStresniKrytiny}"
-                            antena: ${formData.antena}
-                            zemneni: ${formData.zemneni}
-                            jmeno: "${formData.jmeno}"
-                            mesto: "${formData.mesto}"
-                            ulice: "${formData.ulice}"
-                            tel: ${formData.tel}
-                            email: "${formData.email}"
-                            poznamky: "${formData.poznamky}"    
-                        ) {
-                            Boolean
-                        }
-                    } 
-            ` 
-        ;
-
+        const schema = {
+            query: `
+                query {
+                handleEmails(EmailData: {obvodBudovy: ${formData.obvodBudovy}, vyskaBudovy: ${formData.vyskaBudovy}, vyskaBudovyKOkapu: ${formData.vyskaBudovyKOkapu}, delkaHrebenu: ${formData.delkaHrebenu}, typStresniKrytiny: "${formData.typStresniKrytiny}", antena: ${formData.antena}, zemneni: ${formData.zemneni}, jmeno: "${formData.jmeno}", mesto: "${formData.mesto}", ulice: "${formData.ulice}", tel: ${formData.tel}, email: "${formData.email}", poznamky: "${formData.poznamky}"}) {
+                    Boolean
+                } 
+                }
+            `
+        };
         fetch('http://localhost:5005/graphql', {
             method: 'POST',
             body: JSON.stringify(schema),
