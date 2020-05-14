@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
-import Portfolio from "../Portfolio/Portfolio";
 
 const mutationCall = gql`
   mutation addNewItemToFeed($feedInput: feedInputData!) {

@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteButton from "../AdminZone/DeleteButton";
+import DeleteButton from '../../../AdminZone/DeleteButton.js';
 
 const PortfolioItem = (props) => {
   const test = props.index % 2;

@@ -1,0 +1,28 @@
+/* contacts */
+
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.contacts h3 {
+  margin: 0.5rem 0rem;
+  font-size: 1.3rem;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .contacts {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .contacts h3 {
+    margin: 0.5rem 0rem;
+    font-size: 1.3rem;
+  }
+
+}

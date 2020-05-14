@@ -5,16 +5,12 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from "./Header.js";
-import Content from "./Content.js";
-import AdminZone from "./AdminZone/AdminZone";
+import Header from './components/Header/Header.js';
+import Content from './components/Content/Content.js';
+import Footer from './components/Footer/Footer.js';
+import AdminZone from './AdminZone/AdminZone.js';
 
-import "./styles/index.css";
-import "./styles/header.css";
-import "./styles/content.css";
-import "./styles/footer.css";
-import "./styles/adminZone.css";
-import Footer from "./Footer.js";
+import "./index.css";
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),

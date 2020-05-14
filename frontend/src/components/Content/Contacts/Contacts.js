@@ -1,21 +1,23 @@
 import React from "react";
-import Order from "./Order";
+
+import './contacts.css';
 
 const Contacts = () => {
   return (
     <div className="contacts">
-      {/* <div className="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1282.3378657935334!2d14.658882816438117!3d49.99868867683651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b8bfd6fdcb2fb%3A0xb9f109a71071d1ae!2zQmFyw6Frb3ZhIDYxLCAyNTEgMDEgxZjDrcSNYW55!5e0!3m2!1scs!2scz!4v1588776222036!5m2!1scs!2scz"
-          width="400"
-          height="300"
-          frameborder="0"
-          style={{ border: "0" }}
-          allowfullscreen="false"
-          aria-hidden="false"
-          tabindex="0"
-        />
-      </div> */}
+      <div className="map">
+          <iframe
+            title="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1282.3378657935334!2d14.658882816438117!3d49.99868867683651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b8bfd6fdcb2fb%3A0xb9f109a71071d1ae!2zQmFyw6Frb3ZhIDYxLCAyNTEgMDEgxZjDrcSNYW55!5e0!3m2!1scs!2scz!4v1588776222036!5m2!1scs!2scz"
+            width="400"
+            height="300"
+            frameBorder="0"
+            style={{ border: "0" }}
+            allowFullScreen=""
+            aria-hidden="false"
+            tabIndex="0"
+          />
+        </div>
       <div>
         <h3>E-mail </h3>
 
