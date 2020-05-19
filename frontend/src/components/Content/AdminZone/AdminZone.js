@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import LoginInput from "./LoginInput.js";
-import PostInput from './PostInput.js';
+import PostInput from "./PostInput.js";
 import LogOut from "./LogOut.js";
-import Portfolio from "../components/Content/Portfolio/Portfolio.js";
+import Portfolio from "../Portfolio/Portfolio.js";
 
 import "./adminZone.css";
 

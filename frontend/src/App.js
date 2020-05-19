@@ -5,10 +5,10 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from './components/Header/Header.js';
-import Content from './components/Content/Content.js';
-import Footer from './components/Footer/Footer.js';
-import AdminZone from './AdminZone/AdminZone.js';
+import Header from "./components/Header/Header.js";
+import Content from "./components/Content/Content.js";
+import Footer from "./components/Footer/Footer.js";
+import AdminZone from "./components/Content/AdminZone/AdminZone";
 
 import "./index.css";
 

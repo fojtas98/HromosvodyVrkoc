@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import { useLazyQuery } from "@apollo/react-hooks";
 
 import "./Form.css";
+import { parse } from "graphql";
 
 const callQuery = gql`
   query handleEmails($EmailData: emailInputData) {
@@ -215,11 +216,10 @@ const Form = () => {
             placeholder="Prostor pro poznámky"
           />
         </div>
+        <button onClick={handleSubmit} value="Submit">
+          Submit
+        </button>
       </form>
-
-      <button onClick={handleSubmit} value="Submit">
-        Submit
-      </button>
     </div>
   );
 };

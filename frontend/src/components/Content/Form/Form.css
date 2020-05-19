@@ -1,33 +1,36 @@
 .orderForm {
-    width: 60%;
-    margin: 1.5rem 20%;
-    display: flex;
-    flex-direction: column;
+  width: 50%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .orderForm div {
-    margin-bottom: 0.8rem;
-    display: flex;
-    justify-content: space-between;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .orderForm input,
 .orderForm textarea {
-    width: 50%;
-    min-width: 10rem;
-    max-width: 30rem;
+  width: 50%;
+  min-width: 10rem;
+  max-width: 30rem;
+}
+.orderForm button {
+  padding: 0.6rem 1rem;
+  margin: 1rem auto 0 auto;
 }
 
 .orderForm div div {
-    margin-right: 0.5rem;
-    margin-bottom: initial;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 45%;
+  margin-right: 0.5rem;
+  margin-bottom: initial;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: baseline; */
+  width: 45%;
 }
 .orderForm div div input {
-    min-width: initial;
-    width: 2rem;
+  min-width: initial;
+  width: 2rem;
 }
-
