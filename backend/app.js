@@ -62,7 +62,7 @@ const apollo = new ApolloServer({
 });
 
 apollo.applyMiddleware({ app, cors: false });
-
+// mongoose.set("useFindAndModify", false);
 mongoose
   .connect(
     "mongodb+srv://Fojtas:8yp3OQx4gBVvMWLt@cluster0-v7fow.mongodb.net/test?retryWrites=true&w=majority",

@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 
 const mutationCall = gql`
-  mutation addNewItemToFeed($feedInput: feedInputData!) {
+  mutation addNewItemToFeed($feedInput: FeedInputData!) {
     addNewItemToFeed(feedInput: $feedInput) {
       title
       description
@@ -57,7 +57,7 @@ const PostInput = (props) => {
 
   const updatePost = (e) => {
     e.preventDefault();
-    console.log(input);
+    props.update(e, input);
   };
 
   return (

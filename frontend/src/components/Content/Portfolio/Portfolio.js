@@ -11,6 +11,7 @@ const callQuery = gql`
       description
       title
       url
+      _id
     }
   }
 `;
@@ -25,7 +26,7 @@ const Portfolio = (props) => {
         return (
           <PortfolioItem
             key={index}
-            index={index}
+            _id={item._id}
             title={item.title}
             url={item.url}
             description={item.description}
@@ -45,7 +46,11 @@ const Portfolio = (props) => {
     });
   };
   useEffect(() => {
-    if (props.status.post === true || props.status.delete === true) {
+    if (
+      props.status.post === true ||
+      props.status.delete === true ||
+      props.status.edit === true
+    ) {
       return afterRefetch();
     }
     if (!loading && data) {
