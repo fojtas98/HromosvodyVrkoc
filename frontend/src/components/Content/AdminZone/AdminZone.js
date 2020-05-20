@@ -9,7 +9,11 @@ import "./adminZone.css";
 
 const AdminZone = () => {
   const [login, setLogin] = useState(false);
-  const [status, setStatus] = useState({ post: false, delete: false });
+  const [status, setStatus] = useState({
+    post: false,
+    delete: false,
+    edit: false,
+  });
   const [editing, setEditing] = useState(false);
 
   const checkCookie = () => {
@@ -24,7 +28,11 @@ const AdminZone = () => {
     console.log(where);
     if (where === "deleteBtn") {
       setStatus({ delete: true });
-    } else setStatus({ post: true });
+    } else if (where === "postBtn") {
+      setStatus({ post: true });
+    } else if (where === "editBtn") {
+      setStatus({ edit: true });
+    }
   };
 
   useEffect(() => {

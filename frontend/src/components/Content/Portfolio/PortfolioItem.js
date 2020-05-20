@@ -14,11 +14,16 @@ const PortfolioItem = (props) => {
           <p>{props.description}</p>
           <img src={props.url} alt="img" />
           <div>
-            <DeleteButton title={props.title} checkStatus={props.checkStatus} />
+            <DeleteButton
+              title={props.title}
+              checkStatus={props.checkStatus}
+              _id={props._id}
+            />
             <EditButton
-              index={props.index}
+              _id={props._id}
               checkIfEditing={props.checkIfEditing}
               title={props.title}
+              checkStatus={props.checkStatus}
               url={props.url}
               description={props.description}
             />
