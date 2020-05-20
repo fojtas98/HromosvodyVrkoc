@@ -21,6 +21,17 @@
   border: 1px solid rgb(255, 200, 21);
 }
 
+.radio{
+  display: flex;
+  align-items: center;
+}
+
+.radio input{
+  background-color: black;
+  border-radius: 0px;
+  border: 5px solid rgb(255, 200, 21);
+}
+
 .orderForm textarea{
   border-radius: 3px;
   border: 1px solid rgb(255, 200, 21);
@@ -57,3 +68,51 @@
   min-width: initial;
   width: 2rem;
 }
+
+
+/********************
+****YES_NO_BUTTON****
+********************/
+
+
+
+input[type="radio"] {
+  display: none;
+} 
+/** %[Object] Switch */ 
+/*------------------------------------*/ 
+.switch {
+  color: #6f839a;
+  border: 1px solid rgb(255, 200, 21);
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.5em;
+  border-radius: 3px;
+  padding: .125em .5em;
+  display: inline-block;
+  background-color: #ffffff;
+  -webkit-transition: .15s ease;
+  -moz-transition: .15s ease;
+  -ms-transition: .15s ease;
+  -o-transition: .15s ease;
+  transition: .15s ease;
+}
+
+
+
+input[type="radio"]:checked + .switch {
+  color: #fff;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+input[type="radio"]:checked + .switch--on {
+  color: #3e4956;
+  background-color: rgb(255, 200, 21);
+}
+
+input[type="radio"]:checked + .switch--off {
+  background-color: #333333;
+  color: white;
+  border: none;
+} 

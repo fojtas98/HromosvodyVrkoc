@@ -106,56 +106,67 @@ const Form = () => {
             placeholder="Tašky, plech,.."
           />
         </div>
+        
         <div>
           <label>Anténa:</label>
-          <div>
-            <label>
+          <p> 
+            <input
+              type="radio"
+              name="s1"
+              id="s1On"
+              value="yes"
+              hidden=""
+            /> 
+            <label
+              for="s1On"
+              class="switch switch--on">
               Ano
-              <input
-                type="radio"
-                name="antena"
-                value="yes"
-                checked={formData.antena === true}
-                onChange={handleFormData}
-              />
-            </label>
-            <label>
+            </label> 
+            <input
+              type="radio"
+              name="s1"
+              id="s1Off"
+              value="no"
+              hidden=""
+            /> 
+            <label
+              for="s1Off"
+              class="switch switch--off">
               Ne
-              <input
-                type="radio"
-                name="antena"
-                value="no"
-                checked={formData.antena === false}
-                onChange={handleFormData}
-              />
-            </label>
-          </div>
+            </label> 
+          </p>          
         </div>
+
         <div>
           <label>Zemnění:</label>
-          <div>
-            <label>
+          <p> 
+            <input
+              type="radio"
+              name="s2"
+              id="s2On"
+              value="yes"
+              hidden=""
+            /> 
+            <label
+              for="s2On"
+              class="switch switch--on">
               Ano
-              <input
-                type="radio"
-                name="zemneni"
-                value="yes"
-                checked={formData.zemneni === true}
-                onChange={handleFormData}
-              />
-            </label>
-            <label>
+            </label> 
+            <input
+              type="radio"
+              name="s2"
+              id="s2Off"
+              value="no"
+              hidden=""
+            /> 
+            <label
+              for="s2Off"
+              class="switch switch--off">
               Ne
-              <input
-                type="radio"
-                name="zemneni"
-                value="no"
-                checked={formData.zemneni === false}
-                onChange={handleFormData}
-              />
-            </label>
-          </div>
+            </label> 
+          </p>          
         </div>
+
         <div>
           <label>Jméno:</label>
           <input
@@ -254,3 +265,63 @@ export default Form;
 // .catch((err) => {
 // console.log(err);
 // });
+
+
+
+
+//   PUVODNI ANTENA A ZEMENI
+
+/*
+  <div>
+    <label>Anténa:</label>
+    <div>
+      <label className="radio">
+        Ano&nbsp;
+        <input
+          type="radio"
+          name="antena"
+          value="yes"
+          checked={formData.antena === true}
+          onChange={handleFormData}
+        />
+      </label>
+      <label className="radio">
+        Ne&nbsp;
+        <input
+          type="radio"
+          name="antena"
+          value="no"
+          checked={formData.antena === false}
+          onChange={handleFormData}
+        />
+      </label>
+    </div>
+    </div>
+
+    <div>
+    <label>Zemnění:</label>
+    <div>
+      <label className="radio">
+        Ano&nbsp;
+        <input
+          type="radio"
+          name="zemneni"
+          value="yes"
+          checked={formData.zemneni === true}
+          onChange={handleFormData}
+        />
+      </label>
+      <label className="radio">
+        Ne&nbsp;
+        <input
+          type="radio"
+          name="zemneni"
+          value="no"
+          checked={formData.zemneni === false}
+          onChange={handleFormData}
+        />
+      </label>
+    </div>
+  </div>
+
+*/
