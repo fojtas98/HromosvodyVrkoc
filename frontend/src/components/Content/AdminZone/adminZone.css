@@ -9,7 +9,7 @@
   color: #ffc815;
 }
 button {
-  margin-top: 1rem;
+  margin: 1rem 0 1rem 0;
   font-size: 1.1rem;
   padding: 0.25rem;
   border: 0;
@@ -32,4 +32,33 @@ button:hover {
   background-color: #ff2c2c;
   color: white;
   text-transform: uppercase;
+}
+.adminZone form {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid white;
+}
+
+.editing {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(36, 36, 36, 0.726);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.editing div {
+  display: block;
+}
+
+.dim {
+  width: 100vw;
+  height: 100vh;
+}
+.editingForm {
+  top: 25%;
+  height: fit-content;
+  position: absolute;
+  background-color: #292929;
+  padding: 4rem;
 }

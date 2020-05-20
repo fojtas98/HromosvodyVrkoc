@@ -10,6 +10,8 @@ import "./adminZone.css";
 const AdminZone = () => {
   const [login, setLogin] = useState(false);
   const [status, setStatus] = useState({ post: false, delete: false });
+  const [editing, setEditing] = useState(false);
+
   const checkCookie = () => {
     if (document.cookie.includes("sessionId")) {
       setLogin(true);
@@ -29,6 +31,10 @@ const AdminZone = () => {
     checkCookie();
   }, [login]);
 
+  const checkIfEditing = (editing) => {
+    setEditing(editing);
+  };
+
   return (
     <div className="content">
       <div className="adminZone">
@@ -40,6 +46,7 @@ const AdminZone = () => {
               admin={login}
               status={status}
               checkStatus={checkStatus}
+              checkIfEditing={checkIfEditing}
             />
           </div>
         ) : (

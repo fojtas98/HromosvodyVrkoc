@@ -3,7 +3,7 @@ import PortfolioItem from "./PortfolioItem.js";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
-import './portfolio.css';
+import "./portfolio.css";
 
 const callQuery = gql`
   {
@@ -31,6 +31,7 @@ const Portfolio = (props) => {
             description={item.description}
             admin={props.admin}
             checkStatus={props.checkStatus}
+            checkIfEditing={props.checkIfEditing}
           />
         );
       });
