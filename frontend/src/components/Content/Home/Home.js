@@ -16,6 +16,7 @@ const Home = () => {
         Nabízíme odbornou montáž, dodávky a revize hromosvodů po celém území
         České republiky od rodinných domů až po průmyslové haly.
       </p>
+      <br />
       <h3>Možnosti ochrany před bleskem:</h3>
 
       <ol>
@@ -24,7 +25,7 @@ const Home = () => {
           který spolehlivě svede přímý úder blesku do zemnící soustavy tak, aby
           nedošlo k nebezpečným přeskokům na vodivé části objektu.
           <br />
-          <a href="#order">Link na formulář</a>
+          <a href="#order">Požádat o kalkulaci</a>
           <br />
         </li>
         <li>
@@ -33,7 +34,7 @@ const Home = () => {
           preferenční cestu pro „svedení“ případného blesku do zemnící soustavy
           tak, aby nedošlo k nebezpečným přeskokům na vodivé části objektu.
           <br />
-          <a href="#order">Link na formulář</a>
+          <a href="#order">Požádat o kalkulaci</a>
           <br />
         </li>
         <li>
@@ -42,7 +43,7 @@ const Home = () => {
           účinky blesku díky patentovanému obalu vodiče, který zabraňuje
           přeskoku elektrického výboje.
           <br />
-          <a href="#order">Link na formulář</a>
+          <a href="#order">Požádat o kalkulaci</a>
           <br />
         </li>
       </ol>

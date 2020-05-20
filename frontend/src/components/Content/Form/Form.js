@@ -217,7 +217,7 @@ const Form = () => {
           />
         </div>
         <button onClick={handleSubmit} value="Submit">
-          Submit
+          Odeslat
         </button>
       </form>
     </div>

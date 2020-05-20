@@ -11,6 +11,21 @@
   justify-content: space-between;
 }
 
+.orderForm label{
+  font-weight: 400;
+}
+
+.orderForm input{
+  height: 1.7rem;
+  border-radius: 3px;
+  border: 1px solid rgb(255, 200, 21);
+}
+
+.orderForm textarea{
+  border-radius: 3px;
+  border: 1px solid rgb(255, 200, 21);
+}
+
 .orderForm input,
 .orderForm textarea {
   padding: 0.25rem;
@@ -19,8 +34,15 @@
   max-width: 30rem;
 }
 .orderForm button {
-  padding: 0.6rem 1rem;
+  font-weight: 500;
+  height: 1.7rem;
+  width: 7rem;
+  /*padding: 0.6rem 1rem;*/
   margin: 1rem auto 0 auto;
+  color: rgb(49, 49, 49);
+}
+.orderForm button:hover{
+  color: rgb(0, 0, 0);
 }
 
 .orderForm div div {
