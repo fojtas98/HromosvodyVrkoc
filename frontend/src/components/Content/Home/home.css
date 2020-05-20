@@ -7,9 +7,13 @@
 }
 .home p {
   padding: 0.5rem;
+  text-align: justify;
+  line-height: 1.3rem;
 }
 .home h3 {
   color: rgb(255, 200, 21);
+  font-weight: 400;
+  padding-left: 0.5rem;
 }
 .home li {
   border-bottom: 0.5px solid white;
@@ -17,11 +21,15 @@
   margin: 0.5rem;
 }
 
+.home ol li h4{
+  font-weight: 400;
+}
+
 .home a {
   color: rgb(255, 200, 21);
-  font-weight: bold;
   float: right;
 }
-.home a:hover {
-  background-color: rgb(75, 75, 75);
+.home ol li a:hover {
+  background-color: rgba(75, 75, 75, 0);
+  color: white;
 }
