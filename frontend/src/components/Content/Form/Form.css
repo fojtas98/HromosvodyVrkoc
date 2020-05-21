@@ -11,11 +11,12 @@
   justify-content: space-between;
 }
 
-.orderForm label{
+.orderForm label {
   font-weight: 400;
 }
 
-.orderForm input{
+.orderForm input,
+.orderForm select {
   height: 1.7rem;
   border-radius: 3px;
   border: 1px solid rgb(255, 200, 21);
@@ -38,7 +39,8 @@
 }
 
 .orderForm input,
-.orderForm textarea {
+.orderForm textarea,
+.orderForm select {
   padding: 0.25rem;
   width: 50%;
   min-width: 10rem;

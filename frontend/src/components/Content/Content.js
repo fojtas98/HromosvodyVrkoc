@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Portfolio from "./Portfolio/Portfolio.js";
 import Prices from "./Prices/Prices.js";
 import Contacts from "./Contacts/Contacts.js";
 import Home from "./Home/Home.js";
-import Form from './Form/Form.js';
-
-import './content.css';
+import Form from "./Form/Form.js";
+import HromosvodContext from "./context.js";
+import "./content.css";
 
 const Content = (props) => {
+
+  const [ hromosvod, setHromosvod ] = useState("");
+
+  const changeHromosvod = (id) => {
+    setHromosvod(id);
+  }
+
   return (
     <div className="content">
-
       <div className="chapter">
         <div className="chapterHeader">
           <h1 id="Home">Úvod</h1>
         </div>
         <div>
-          <Home />
+          <HromosvodContext.Provider value={{hromosvod: hromosvod}}>
+            <Home changeHromosvod={changeHromosvod} />
+          </HromosvodContext.Provider>
         </div>
       </div>
 
@@ -44,7 +52,9 @@ const Content = (props) => {
           <h1 id="order">Kontaktní formulář pro kalkulaci</h1>
         </div>
         <div>
-          <Form />
+          <HromosvodContext.Provider value={{hromosvod: hromosvod}}>
+            <Form />
+          </HromosvodContext.Provider>
         </div>
       </div>
 

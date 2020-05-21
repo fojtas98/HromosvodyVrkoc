@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import './home.css';
+import HromosvodContext from "../context.js";
 
-const Home = () => {
+import "./home.css";
+
+const Home = (props) => {
+  const contextType = useContext(HromosvodContext);
+
+  const handleClick = (e) => {
+    const { id } = e.target;
+    props.changeHromosvod(id);
+  };
+
   return (
     <div className="home">
       <p>
@@ -25,7 +34,9 @@ const Home = () => {
           který spolehlivě svede přímý úder blesku do zemnící soustavy tak, aby
           nedošlo k nebezpečným přeskokům na vodivé části objektu.
           <br />
-          <a href="#order">Požádat o kalkulaci</a>
+          <a href="#order" id="klasicky" onClick={(e) => handleClick(e)}>
+            Požádat o kalkulaci
+          </a>
           <br />
         </li>
         <li>
@@ -34,7 +45,9 @@ const Home = () => {
           preferenční cestu pro „svedení“ případného blesku do zemnící soustavy
           tak, aby nedošlo k nebezpečným přeskokům na vodivé části objektu.
           <br />
-          <a href="#order">Požádat o kalkulaci</a>
+          <a href="#order" id="aktivni" onClick={(e) => handleClick(e)}>
+            Požádat o kalkulaci
+          </a>
           <br />
         </li>
         <li>
@@ -43,7 +56,9 @@ const Home = () => {
           účinky blesku díky patentovanému obalu vodiče, který zabraňuje
           přeskoku elektrického výboje.
           <br />
-          <a href="#order">Požádat o kalkulaci</a>
+          <a href="#order" id="hvi" onClick={(e) => handleClick(e)}>
+            Požádat o kalkulaci
+          </a>
           <br />
         </li>
       </ol>

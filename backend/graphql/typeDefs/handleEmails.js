@@ -9,6 +9,7 @@ export default gql`
   #   }
 
   input emailInputData {
+    hromosvod: String
     obvodBudovy: Int
     vyskaBudovy: Int
     vyskaBudovyKOkapu: Int

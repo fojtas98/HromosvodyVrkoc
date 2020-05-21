@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import gql from "graphql-tag";
 import { useLazyQuery } from "@apollo/react-hooks";
 
+import HromosvodContext from "../context.js";
 import "./Form.css";
-import { parse } from "graphql";
 
 const callQuery = gql`
   query handleEmails($EmailData: emailInputData) {
@@ -12,31 +12,47 @@ const callQuery = gql`
 `;
 
 const Form = () => {
+  const contextType = useContext(HromosvodContext);
+
+  useEffect(() => {
+    setFormData((prevState) => {
+      return { ...prevState, hromosvod: contextType.hromosvod };
+    });
+  }, [contextType]);
+
   const [postForm, { loading, data, error }] = useLazyQuery(callQuery);
+
   const [formData, setFormData] = useState({
-    obvodBudovy: undefined,
-    vyskaBudovy: undefined,
-    vyskaBudovyKOkapu: undefined,
-    delkaHrebenu: undefined,
+    hromosvod: "",
+    obvodBudovy: "",
+    vyskaBudovy: "",
+    vyskaBudovyKOkapu: "",
+    delkaHrebenu: "",
     typStresniKrytiny: "",
     antena: undefined,
     zemneni: undefined,
     jmeno: "",
     mesto: "",
     ulice: "",
-    tel: undefined,
+    tel: "",
     email: "",
     poznamky: "",
   });
 
+  console.log(formData);
+
   const handleFormData = (event) => {
-    const { name, value, type } = event.target;
-    console.log(value);
     console.log(formData);
+    const { name, value, type } = event.target;
     if (type === "number") {
-      setFormData((prevState) => {
-        return { ...prevState, [name]: parseInt(value, 10) };
-      });
+      if (value <= 0) {
+        alert("Vložte pouze pozitivní číslo");
+      } else {
+        setFormData((prevState) => {
+          console.log("here is the trouble");
+          return { ...prevState, [name]: parseInt(value, 10) };
+        });
+      }
     } else if (type === "radio") {
       setFormData((prevState) => {
         return { ...prevState, [name]: value === "yes" };
@@ -56,6 +72,19 @@ const Form = () => {
   return (
     <div>
       <form className="orderForm">
+        <div>
+          <label>Typ hromosvodu:</label>
+          <select
+            name="hromosvod"
+            onChange={handleFormData}
+            value={formData.hromosvod}
+          >
+            <option value="">---Zvolte hromosvod---</option>
+            <option value="klasicky">Klasický hromosvod</option>
+            <option value="aktivni">Aktivní hromosvod</option>
+            <option value="hvi">HVI hromosvod</option>
+          </select>
+        </div>
         <div>
           <label>Obvod budovy:</label>
           <input

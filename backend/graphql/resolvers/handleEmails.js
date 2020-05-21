@@ -13,6 +13,11 @@ export default {
         subject: "Formulář z Hromosvodyvrkoc.cz",
         html: `<div>
         ${
+          EmailData.hromosvod
+            ? `<u>Hromosvod:</u> ${EmailData.hromosvod} <br />`
+            : ` <span></span>`
+        }
+        ${
           EmailData.obvodBudovy
             ? `<u>obvod budovy:</u> ${EmailData.obvodBudovy} <br />`
             : ` <span></span>`
