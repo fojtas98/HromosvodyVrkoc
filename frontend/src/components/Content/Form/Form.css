@@ -118,3 +118,22 @@ input[type="radio"]:checked + .switch--off {
   color: white;
   border: none;
 } 
+
+
+/* For mobile phones: */
+
+@media only screen and (max-width: 767px) {
+  .orderForm {
+    width: 95%;
+    margin: 1.5rem auto;
+  }
+  
+}
+
+@media only screen and (max-width: 1024px) {
+  .orderForm {
+    width: 80%;
+    margin: 1.5rem auto;
+  }
+  
+}

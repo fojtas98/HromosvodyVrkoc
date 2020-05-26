@@ -5,6 +5,26 @@ import './contacts.css';
 const Contacts = () => {
   return (
     <div className="contacts">
+      <div className="contactBlock">
+        <div>
+          <h3>E-mail </h3>
+
+          <a href="mailto:hromosvody.vrkoc@gmail.com ">
+            hromosvody.vrkoc@gmail.com
+          </a>
+        </div>
+        <div>
+          <h3>Telefon </h3>
+          <a href="tel:+420 604 340 473">+420 604 340 473</a>
+        </div>
+        <div>
+          <h3>Okres</h3>
+          <a href="https://www.google.com/maps/place/251+01+%C5%98%C3%AD%C4%8Dany/@50.0034757,14.6184573,12.21z/data=!4m5!3m4!1s0x470b8944f329c311:0x400af0f6615c650!8m2!3d49.9916782!4d14.6542758">
+            Říčany, Praha-východ
+          </a>
+        </div>
+      </div>
+
       <div className="map">
           <iframe
             title="map"
@@ -18,23 +38,6 @@ const Contacts = () => {
             tabIndex="0"
           />
         </div>
-      <div>
-        <h3>E-mail </h3>
-
-        <a href="mailto:hromosvody.vrkoc@gmail.com ">
-          hromosvody.vrkoc@gmail.com
-        </a>
-      </div>
-      <div>
-        <h3>Telefon </h3>
-        <a href="tel:+420 604 340 473">+420 604 340 473</a>
-      </div>
-      <div>
-        <h3>Okres</h3>
-        <a href="https://www.google.com/maps/place/251+01+%C5%98%C3%AD%C4%8Dany/@50.0034757,14.6184573,12.21z/data=!4m5!3m4!1s0x470b8944f329c311:0x400af0f6615c650!8m2!3d49.9916782!4d14.6542758">
-          Říčany, Praha-východ
-        </a>
-      </div>
     </div>
   );
 };

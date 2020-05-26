@@ -1,0 +1,19 @@
+.prices{
+    padding: 1rem 7rem 0rem 7rem;
+}
+
+
+/* For mobile phones: */
+
+@media only screen and (max-width: 767px) {
+    .prices{
+        padding: 1rem 1rem 0rem 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .prices {
+      padding: 1rem 3rem 0rem 3rem;
+    }
+    
+  }

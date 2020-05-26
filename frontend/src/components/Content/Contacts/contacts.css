@@ -9,7 +9,18 @@
 .contacts h3 {
   margin: 0.5rem 0rem;
   font-size: 1.3rem;
+  font-weight: 400;
 }
+
+.contacts a {
+  color: #FFC815;
+  font-weight: 400;
+}
+
+.map{
+  margin: 10px 0 0 0;
+}
+
 
 
 
@@ -25,4 +36,18 @@
     font-size: 1.3rem;
   }
 
+}
+
+@media only screen and (max-width: 1024px) {
+  .contacts {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+  }
+/*
+  .contacts h3 {
+    margin: 0.5rem 0rem;
+    font-size: 1.3rem;
+  }
+*/
 }

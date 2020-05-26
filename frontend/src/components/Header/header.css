@@ -30,7 +30,7 @@
   max-height: 25rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navlinks a {
     font-size: 1rem;
   }

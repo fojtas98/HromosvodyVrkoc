@@ -1,18 +1,22 @@
 import React from "react";
 
+import "./Prices.css";
+
 const Prices = () => {
   return (
-    <div>
+    <div className="prices">
       <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam neque.
-        Maecenas aliquet accumsan leo. Etiam bibendum elit eget erat. Aenean
-        fermentum risus id tortor. Fusce consectetuer risus a nunc. Etiam dictum
-        tincidunt diam. Integer imperdiet lectus quis justo. Vestibulum erat
-        nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nam sed tellus id
-        magna elementum tincidunt. Aliquam ante. Nulla pulvinar eleifend sem.
-        Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.
-        Duis viverra diam non justo. Praesent vitae arcu tempor neque lacinia
-        pretium. Vivamus ac leo pretium faucibus.
+        Pro cenovou kalkulaci Vašeho hromosvodu prosím vyplňte formulář níže,
+        my obratem na Vámi vyplněný e-mail zašleme cenovou nabídku.
+      </p>
+      <br />
+      <p>
+        V případě jakýchkoli dotazů neváhejte napsat na e-mail uvedený níže.
+      </p>
+      <br />
+      <p>
+        Pokud si nejste jisti s vyplněním některých částí formuláře pro kalkulaci,
+        ponechte tato pole prázdná a popište nejasnosti do pole s poznámkami, na konci formuláře.
       </p>
     </div>
   );
