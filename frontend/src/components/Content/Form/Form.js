@@ -39,7 +39,6 @@ const Form = () => {
     poznamky: "",
   });
 
-  console.log(formData);
 
   const handleFormData = (event) => {
     console.log(formData);
@@ -49,7 +48,6 @@ const Form = () => {
         alert("Vložte pouze pozitivní číslo");
       } else {
         setFormData((prevState) => {
-          console.log("here is the trouble");
           return { ...prevState, [name]: parseInt(value, 10) };
         });
       }
@@ -141,26 +139,30 @@ const Form = () => {
           <p> 
             <input
               type="radio"
-              name="s1"
+              name="antena"
               id="s1On"
               value="yes"
+              onChange={e => handleFormData(e)}
+              checked={formData.antena === true}
               hidden=""
             /> 
             <label
-              for="s1On"
-              class="switch switch--on">
+              htmlFor="s1On"
+              className="switch switch--on">
               Ano
             </label> 
             <input
               type="radio"
-              name="s1"
+              name="antena"
               id="s1Off"
+              onChange={e => handleFormData(e)}
+              checked={formData.antena === false}
               value="no"
               hidden=""
             /> 
             <label
-              for="s1Off"
-              class="switch switch--off">
+              htmlFor="s1Off"
+              className="switch switch--off">
               Ne
             </label> 
           </p>          
@@ -171,26 +173,30 @@ const Form = () => {
           <p> 
             <input
               type="radio"
-              name="s2"
+              name="zemneni"
               id="s2On"
               value="yes"
+              onChange={e => handleFormData(e)}
+              checked={formData.zemneni === true}
               hidden=""
             /> 
             <label
-              for="s2On"
-              class="switch switch--on">
+              htmlFor="s2On"
+              className="switch switch--on">
               Ano
             </label> 
             <input
               type="radio"
-              name="s2"
+              name="zemneni"
               id="s2Off"
               value="no"
+              onChange={e => handleFormData(e)}
+              checked={formData.zemneni === false}
               hidden=""
             /> 
             <label
-              for="s2Off"
-              class="switch switch--off">
+              htmlFor="s2Off"
+              className="switch switch--off">
               Ne
             </label> 
           </p>          
