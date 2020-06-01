@@ -20,7 +20,7 @@ const Content = (props) => {
     <div className="content">
       <div className="chapter">
         <div className="chapterHeader">
-          <h1 id="Home">Úvod</h1>
+          <h1 id="home">Úvod</h1>
         </div>
         <div>
           <HromosvodContext.Provider value={{hromosvod: hromosvod}}>
