@@ -12,11 +12,12 @@ import AdminZone from "./components/Content/AdminZone/AdminZone";
 
 import "./index.css";
 
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: createUploadLink({
     credentials: "include",
-    uri: "http://localhost:5005/graphql",
+    uri: `http://node-express-env.eba-p7nw2ukf.eu-central-1.elasticbeanstalk.com/graphql`,
   }),
 });
 

@@ -12,7 +12,6 @@ const DeleteButton = (props) => {
     callMutation
   );
   const remove = () => {
-    console.log(props.title);
     removeFeedItem({
       variables: { title: props.title },
       notifyOnNetworkStatusChange: true,
