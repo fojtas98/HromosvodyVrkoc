@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import connectMongo from "connect-mongo";
 import session from "express-session";
 import cors from "cors";
+require("dotenv").config();
 
 import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
@@ -64,10 +65,7 @@ const apollo = new ApolloServer({
 apollo.applyMiddleware({ app, cors: false });
 // mongoose.set("useFindAndModify", false);
 mongoose
-  .connect(
-    "mongodb+srv://Fojtas:8yp3OQx4gBVvMWLt@cluster0-v7fow.mongodb.net/test?retryWrites=true&w=majority",
-    { dbName: "HromosvodyVrkoc" }
-  )
+  .connect(process.env.DB, { dbName: "HromosvodyVrkoc" })
   .then(() => {
     app.listen(PORT);
   })

@@ -1,8 +1,6 @@
 import sgMail from "@sendgrid/mail";
 
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(process.env.TWILIO);
 
 export default {
   Query: {

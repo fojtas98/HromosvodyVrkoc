@@ -4,9 +4,9 @@
   "description": "Beckend for webPage  HromosvodyVrkoc",
   "main": "app.js",
   "scripts": {
-    "start": "node -r esm app.js",
+    "start": "node -r esm -r dotenv app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r esm app.js"
+    "dev": "nodemon -r esm  -r dotenv app.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
